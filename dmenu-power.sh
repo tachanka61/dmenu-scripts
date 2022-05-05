@@ -19,8 +19,6 @@ fi
 
 DMENU "Quit\nLock screen\nPower off\nReboot" "Choose an option:"
 
-echo "$input"
-
 case $input in
   "Quit")
     confirm "Do you really want to reboot your machine?"
@@ -43,6 +41,10 @@ case $input in
     confirm "Do you really want to reboot your machine?"
     systemctl reboot
     exit 0
+    ;;
+    *)
+    echo "Incorrect input!"
+    exit 1
     ;;
 esac
 
