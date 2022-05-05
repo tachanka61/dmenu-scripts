@@ -17,17 +17,21 @@ DMENU_EDITOR="emacsclient -c -a 'emacs'"
 
 # Launch dmenu with all flags
 DMENU() {
-    input=$(
-        echo -e "$1" \
-        | dmenu -i \
-                -p "$2" \
-                -l "$DMENU_LINES" \
-                -fn "$DMENU_FONT":pixelsize="$DMENU_FONTSIZE" \
-                -nb $DMENU_BG -nf $DMENU_FG \
-                -sb $DMENU_FG -sf $DMENU_BG
-           )
+  input=$(
+          echo -e "$1" \
+            | dmenu -i \
+            -p "$2" \
+            -l "$DMENU_LINES" \
+            -fn "$DMENU_FONT":pixelsize="$DMENU_FONTSIZE" \
+            -nb $DMENU_BG -nf $DMENU_FG \
+            -sb $DMENU_FG -sf $DMENU_BG
+         )
 }
 
 confirm() {
-    DMENU "Yes\nNo" "$1"
+  DMENU "Yes\nNo" "$1"
+  if [[ $input != "Yes" ]] ; then
+    echo "Interrupted by user"
+    exit 0
+  fi
 }
