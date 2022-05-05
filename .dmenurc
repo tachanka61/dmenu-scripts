@@ -1,0 +1,33 @@
+#! /bin/bash
+
+# Custom dmenu options
+# shellcheck disable=2034
+DMENU_LINES=10
+
+DMENU_HEIGHT=18
+
+DMENU_FONT="Cascadia Code"
+DMENU_FONTSIZE=12
+
+DMENU_BG="#3B4252"
+DMENU_FG="#88C0D0"
+
+# Other variables
+DMENU_EDITOR="emacsclient -c -a 'emacs'"
+
+# Launch dmenu with all flags
+DMENU() {
+    input=$(
+        echo -e "$1" \
+        | dmenu -i \
+                -p "$2" \
+                -l "$DMENU_LINES" \
+                -fn "$DMENU_FONT":pixelsize="$DMENU_FONTSIZE" \
+                -nb $DMENU_BG -nf $DMENU_FG \
+                -sb $DMENU_FG -sf $DMENU_BG
+           )
+}
+
+confirm() {
+    DMENU "Yes\nNo" "$1"
+}

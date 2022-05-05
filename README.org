@@ -1,0 +1,39 @@
+#+title: dmenu-scripts
+#+author: tachanka
+#+description: Repository of useful scripts for dmenu
+
+* Description
+This scripts are inspired by [[https://gitlab.com/dwt1/dmscripts][DT's dmscripts]]. I want to do something useful for myself.
+
+* Installation
++ Install dmenu with [[https://tools.suckless.org/dmenu/patches/line-height/][height patch]]
+  On Arch-based system:
+
+  #+begin_src shell
+sudo pacman -S dmenu
+  #+end_src
+
++ Clone repository
+
+  #+begin_src shell
+git clone https://github.com/tachanka61/dmenu-scripts.git
+cd dmenu-scripts
+  #+end_src
+
++ *[Optional]* Add folder to your shell's path. You can do this by inserting this line to your .bashrc/.zshrc once:
+
+  #+begin_src shell
+export PATH=$PATH:"$(pwd)" # This command adds current directory (with dmenu-scripts) to exitisting $PATH
+  #+end_src
+
+* Files
+** .dmenurc file
+There is a =.dmenurc= in this repository, you should move/copy it to your =$HOME= folder. If you want to customize dmenu, edit it.
+
+** Scripts
+|--------------+-----------------------+--------------------------------------------------|
+| Script       | Dependencies          | Description                                      |
+|--------------+-----------------------+--------------------------------------------------|
+| dmenu-power  | i3lock                | Reboot, power off computer of quit bspwm session |
+| dmenu-config | emacs(default editor) | Open your configurations faster with dmenu       |
+|--------------+-----------------------+--------------------------------------------------|
