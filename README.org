@@ -28,7 +28,11 @@ export PATH=$PATH:"$(pwd)" # This command adds current directory (with dmenu-scr
 
 * Files
 ** .dmenurc file
-There is a =.dmenurc= in this repository, you should move/copy it to your =$HOME= folder. If you want to customize dmenu, edit it.
+There is a [[https://github.com/tachanka61/dmenu-scripts/blob/main/.dmenurc][.dmenurc]] in this repository, you should move/copy it to your =$HOME= folder. If you want to customize dmenu, edit it:
+
+#+begin_src shell
+ln -T .dmenurc ~/.dmenurc
+#+end_src
 
 ** Scripts
 |--------------+-----------------------+--------------------------------------------------|

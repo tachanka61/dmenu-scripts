@@ -17,7 +17,8 @@ else
   }
 fi
 
-DMENU "Quit\nLock screen\nPower off\nReboot" "Choose an option:"
+# Ask user what does it want to do
+DMENU "Quit\nLock screen\nPower off\nReboot" "Choose an option: "
 
 case $input in
   "Quit")

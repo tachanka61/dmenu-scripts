@@ -14,11 +14,12 @@ DMENU_FG="#88C0D0"
 
 # Other variables
 DMENU_EDITOR="emacsclient -c -a 'emacs'"
+# DMENU_EDITOR=$VISUAL
+# DMENU_EDITOR=$EDITOR
 
 # Launch dmenu with all flags
 DMENU() {
-  input=$(
-          echo -e "$1" \
+  input=$( echo -e "$1" \
             | dmenu -i \
             -p "$2" \
             -l "$DMENU_LINES" \
@@ -28,6 +29,7 @@ DMENU() {
          )
 }
 
+# Some actions require confirmation
 confirm() {
   DMENU "Yes\nNo" "$1"
   if [[ $input != "Yes" ]] ; then
