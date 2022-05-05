@@ -2,6 +2,17 @@
 #+author: tachanka
 #+description: Repository of useful scripts for dmenu
 
+#+html: <p align="center">
+#+html:     <img src="https://img.shields.io/github/last-commit/tachanka61/dmenu-scripts?logo=github&logoColor=white&style=flat-square&colorA=161b22">
+#+html:     <img src="https://img.shields.io/github/repo-size/tachanka61/dmenu-scripts?logo=github&logoColor=white&style=flat-square&colorA=161b22">
+#+html:     <img src="https://img.shields.io/github/issues-raw/tachanka61/dmenu-scripts?logo=github&logoColor=white&style=flat-square&colorA=161b22">
+#+html: </p>
+#+html: <p align="center">
+#+html:     <a href="https://www.gnu.org/licenses/gpl-3.0.html">
+#+html:           <img src="https://img.shields.io/badge/GNU_GPL_v3-161b22?style=for-the-badge">
+#+html:     </a>
+#+html: </p>
+
 * Description
 This scripts are inspired by [[https://gitlab.com/dwt1/dmscripts][DT's dmscripts]]. I want to do something useful for myself.
 
@@ -35,9 +46,18 @@ ln -T .dmenurc ~/.dmenurc
 #+end_src
 
 ** Scripts
-|--------------+-----------------------+--------------------------------------------------|
-| Script       | Dependencies          | Description                                      |
-|--------------+-----------------------+--------------------------------------------------|
-| dmenu-power  | i3lock                | Reboot, power off computer of quit bspwm session |
-| dmenu-config | emacs(default editor) | Open your configurations faster with dmenu       |
-|--------------+-----------------------+--------------------------------------------------|
+*** dmenu-power
++ Reboot, power off, lock screen or quit session using dmenu
++ Dependencies: i3lock
++ Usage: =./dmenu-power.sh=
+
+*** dmenu-config
++ Open your configuration files faster!
++ Dependencies: [[https://www.gnu.org/software/emacs/][Emacs]] (default editor, can be changed in =.dmenurc= )
++ Usage: =./dmenu-config.sh=
+
+*** dmenu-keepass
++ Obtain password and usernames from =.kdbx= files using =keepassxc-cli= and dmenu
++ Dependencies: [[https://github.com/kfish/xsel][xsel]], [[https://wiki.archlinux.org/title/Libnotify#Libnotify][notify-send (libnotify)]], [[https://github.com/keepassxreboot/keepassxc/blob/develop/docs/man/keepassxc-cli.1.adoc][keepassxc-cli]]
++ Note: Based on [[https://github.com/uriel1998/multiple_scripts/blob/master/kpf.sh][kpf.sh]] of @uriel1998
++ Usage: =./dmenu-keepass.sh [PATH_TO_DATABASE]=
