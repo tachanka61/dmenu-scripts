@@ -17,15 +17,29 @@ DMENU_EDITOR="emacsclient -c -a 'emacs'"
 # DMENU_EDITOR=$VISUAL
 # DMENU_EDITOR=$EDITOR
 
+DMENU_TERM="kitty"
+# DMENU_TERM="xterm"
+# DMENU_TERM="alacritty"
+
 # Launch dmenu with all flags
 DMENU() {
   input=$( echo -e "$1" \
             | dmenu -i \
-            -p "$2" \
-            -l "$DMENU_LINES" \
-            -fn "$DMENU_FONT":pixelsize="$DMENU_FONTSIZE" \
-            -nb $DMENU_BG -nf $DMENU_FG \
-            -sb $DMENU_FG -sf $DMENU_BG
+                    -p "$2" \
+                    -l "$DMENU_LINES" \
+                    -fn "$DMENU_FONT":pixelsize="$DMENU_FONTSIZE" \
+                    -nb $DMENU_BG -nf $DMENU_FG \
+                    -sb $DMENU_FG -sf $DMENU_BG
+         )
+}
+
+DMENU_PASS() {
+  input=$( echo -e "" \
+            | dmenu -i \
+                    -p "$1" \
+                    -fn "$DMENU_FONT":pixelsize="$DMENU_FONTSIZE" \
+                    -nb $DMENU_BG -nf $DMENU_BG \
+                    -sb $DMENU_FG -sf $DMENU_BG
          )
 }
 
