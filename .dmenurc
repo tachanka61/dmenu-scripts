@@ -1,8 +1,16 @@
 #! /bin/bash
+#
+# ████████╗ |              DMENU-SCRIPTS
+# ╚══██╔══╝ |               tachanka61
+#    ██║    |
+#    ██║    | https://github.com/tachanka61/dmenu-scripts
+#    ██║    |
+#    ╚═╝    |
 
-# Custom dmenu options
 # shellcheck disable=2034
-DMENU_LINES=10
+
+# Options of dmenu
+DMENU_LINES=20
 
 DMENU_HEIGHT=18
 
@@ -12,14 +20,18 @@ DMENU_FONTSIZE=12
 DMENU_BG="#3B4252"
 DMENU_FG="#88C0D0"
 
-# Other variables
-DMENU_EDITOR="emacsclient -c -a 'emacs'"
-# DMENU_EDITOR=$VISUAL
-# DMENU_EDITOR=$EDITOR
-
+# Default terminal emulator
 DMENU_TERM="kitty"
 # DMENU_TERM="xterm"
 # DMENU_TERM="alacritty"
+
+# Default editor (dmenu-config)
+DMENU_EDITOR="emacsclient -c -a 'emacs'"
+# DMENU_EDITOR=$VISUAL # Default GUI editor
+# DMENU_EDITOR="$DMENU_TERM -e vim" # Default CLI in terminal
+
+# Use this path to save screenshots (dmenu-flameshot)
+DMENU_SCREENSHOT_FOLDER="$HOME/Pictures/screenshots/"
 
 # Launch dmenu with all flags
 DMENU() {
@@ -33,6 +45,7 @@ DMENU() {
          )
 }
 
+# Launch dmenu with invisible user input (dmenu-keepass)
 DMENU_PASS() {
   input=$( echo -e "" \
             | dmenu -i \
@@ -43,7 +56,7 @@ DMENU_PASS() {
          )
 }
 
-# Some actions require confirmation
+# Some actions require confirmation (dmenu-power)
 confirm() {
   DMENU "Yes\nNo" "$1"
   if [[ $input != "Yes" ]] ; then
