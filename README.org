@@ -59,6 +59,11 @@ ln -T .dmenurc ~/.dmenurc
 + Usage: =./dmenu-keepass.sh [PATH_TO_DATABASE]=
 
 *** dmenu-flameshot
-+ Make screenshots via flameshot
++ Make screenshots via =flameshot=
 + Dependencies: [[https://github.com/flameshot-org/flameshot][flameshot]]
 + Usage: =./dmenu-flameshot.sh=
+
+*** dmenu-nord-color
++ Copy colors of Nord palette to your buffer
++ Dependencies: [[https://github.com/kfish/xsel][xsel]], [[https://www.gnu.org/software/gawk/][awk]]
++ Usage: =./dmenu-nord-color.sh=
