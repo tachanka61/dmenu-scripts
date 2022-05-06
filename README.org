@@ -14,7 +14,7 @@
 #+html: </p>
 
 * Description
-This scripts are inspired by [[https://gitlab.com/dwt1/dmscripts][DT's dmscripts]]. I want to do something useful for myself.
+This scripts are inspired by [[https://gitlab.com/dwt1/dmscripts][DT's dmscripts]]. I want to do something useful.
 
 * Installation
 + Install dmenu with [[https://tools.suckless.org/dmenu/patches/line-height/][height patch]]
@@ -24,18 +24,14 @@ This scripts are inspired by [[https://gitlab.com/dwt1/dmscripts][DT's dmscripts
 sudo pacman -S dmenu
   #+end_src
 
-+ Clone repository
++ Clone repository:
 
   #+begin_src shell
 git clone https://github.com/tachanka61/dmenu-scripts.git
 cd dmenu-scripts
   #+end_src
 
-+ *[Optional]* Add folder to your shell's path. You can do this by inserting this line to your .bashrc/.zshrc once:
-
-  #+begin_src shell
-export PATH=$PATH:"$(pwd)" # This command adds current directory (with dmenu-scripts) to exitisting $PATH
-  #+end_src
++ *[Optional]* Add folder to your shell's path.
 
 * Files
 ** .dmenurc file
@@ -48,7 +44,7 @@ ln -T .dmenurc ~/.dmenurc
 ** Scripts
 *** dmenu-power
 + Reboot, power off, lock screen or quit session using dmenu
-+ Dependencies: i3lock
++ Dependencies: [[https://github.com/i3/i3lock][i3lock]]
 + Usage: =./dmenu-power.sh=
 
 *** dmenu-config
@@ -59,5 +55,10 @@ ln -T .dmenurc ~/.dmenurc
 *** dmenu-keepass
 + Obtain password and usernames from =.kdbx= files using =keepassxc-cli= and dmenu
 + Dependencies: [[https://github.com/kfish/xsel][xsel]], [[https://wiki.archlinux.org/title/Libnotify#Libnotify][notify-send (libnotify)]], [[https://github.com/keepassxreboot/keepassxc/blob/develop/docs/man/keepassxc-cli.1.adoc][keepassxc-cli]]
-+ Note: Based on [[https://github.com/uriel1998/multiple_scripts/blob/master/kpf.sh][kpf.sh]] of @uriel1998
++ Note: Based on [[https://github.com/uriel1998/multiple_scripts/blob/master/kpf.sh][kpf.sh]] of [[https://github.com/uriel1998][uriel1998]]
 + Usage: =./dmenu-keepass.sh [PATH_TO_DATABASE]=
+
+*** dmenu-flameshot
++ Make screenshots via flameshot
++ Dependencies: [[https://github.com/flameshot-org/flameshot][flameshot]]
++ Usage: =./dmenu-flameshot.sh=
