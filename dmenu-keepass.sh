@@ -8,9 +8,14 @@
 #    ╚═╝    | notify-send (libnotify)
 # Based on https://github.com/uriel1998/multiple_scripts/blob/master/kpf.sh
 
+# shellcheck disable=SC2086,SC1091
+
+# This makes program more secure
+# Also you can enable 'x' flag to enable debug
+set -euo pipefail
+
 # Load config
 if [ -f "$HOME"/.dmenurc ]; then
-# shellcheck disable=1091
   source "$HOME/.dmenurc"
 else
   DMENU() {
@@ -32,7 +37,6 @@ keepass_list=$(echo "$password" \
 # Select an entry
 DMENU "$keepass_list" "Choose an entry: "
 
-# shellcheck disable=2086
 # Get password and copy it to buffer
 echo "$password" \
  | keepassxc-cli show -s "${database}" "$input" \
@@ -40,8 +44,8 @@ echo "$password" \
  | xsel -p ; xsel -o | xsel -b
 
 # Get username and show it using 'notify-send'
-notify-send "Username: $(echo $password \
-                          | keepassxc-cli show -s $database $input \
+notify-send "Username: $(echo "$password" \
+                          | keepassxc-cli show -s "$database" "$input" \
                                                -a username
                         )"
 

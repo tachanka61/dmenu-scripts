@@ -7,9 +7,14 @@
 #    ██║    | Dependencies: dmenu, flameshot
 #    ╚═╝    |
 
+# shellcheck disable=SC1091
+
+# This makes program more secure
+# Also you can enable 'x' flag to enable debug
+set -euo pipefail
+
 # Load config
 if [ -f "$HOME"/.dmenurc ]; then
-  # shellcheck disable=1091
   source "$HOME/.dmenurc"
 else
   DMENU() {

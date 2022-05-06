@@ -7,10 +7,14 @@
 #    ██║    | Dependencies: dmenu, emacs(default editor)
 #    ╚═╝    |
 
+# This makes program more secure
+# Also you can enable 'x' flag to enable debug
+set -euo pipefail
+
+# shellcheck disable=SC1091,SC2090
 
 # Load config
 if [ -f "$HOME"/.dmenurc ]; then
-  # shellcheck disable=1091
   source "$HOME/.dmenurc"
 else
   DMENU() {
@@ -38,7 +42,6 @@ DMENU "$configs" "Select configuration: "
 
 # If something was selected, open selected option in editor
 if [[ $input ]]; then
-  # shellcheck disable=2090
   $DMENU_EDITOR "$input"
 fi
 

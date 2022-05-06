@@ -7,7 +7,7 @@
 #    ██║    |
 #    ╚═╝    |
 
-# shellcheck disable=2034
+# shellcheck disable=SC2034,SC2089
 
 # Options of dmenu
 DMENU_LINES=20

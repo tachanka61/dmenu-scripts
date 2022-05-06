@@ -9,7 +9,7 @@
 #+html: </p>
 #+html: <p align="center">
 #+html:     <a href="https://www.gnu.org/licenses/gpl-3.0.html">
-#+html:           <img src="https://img.shields.io/badge/GNU_GPL_v3-161b22?style=for-the-badge">
+#+html:           <img src="https://img.shields.io/badge/GNU_GPL_v3-161b22?style=for-the-badge&logo=GNU">
 #+html:     </a>
 #+html: </p>
 
