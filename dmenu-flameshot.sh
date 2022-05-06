@@ -64,6 +64,7 @@ case $input in
   ;;
   *)
     echo "Incorrect input!"
+    exit 1
   ;;
 esac
 

@@ -24,9 +24,6 @@ database="$1"
 # Ask user password
 DMENU_PASS "Enter the password: "
 
-# Save our password to separate variable
-password=$input
-
 # Get list of entries
 keepass_list=$(echo "$password" \
                 | keepassxc-cli ls -R "$database"

@@ -47,12 +47,12 @@ DMENU() {
 
 # Launch dmenu with invisible user input (dmenu-keepass)
 DMENU_PASS() {
-  input=$( echo -e "" \
-            | dmenu -i \
-                    -p "$1" \
-                    -fn "$DMENU_FONT":pixelsize="$DMENU_FONTSIZE" \
-                    -nb $DMENU_BG -nf $DMENU_BG \
-                    -sb $DMENU_FG -sf $DMENU_BG
+  password=$( echo -e "" \
+               | dmenu -i \
+                       -p "$1" \
+                       -fn "$DMENU_FONT":pixelsize="$DMENU_FONTSIZE" \
+                       -nb $DMENU_BG -nf $DMENU_BG \
+                       -sb $DMENU_FG -sf $DMENU_BG
          )
 }
 

@@ -37,7 +37,7 @@ configs=$(printf '%s\n' "${config_array[@]}")
 DMENU "$configs" "Select configuration: "
 
 # If something was selected, open selected option in editor
-if [[ $input ]] ; then
+if [[ $input ]]; then
   # shellcheck disable=2090
   $DMENU_EDITOR "$input"
 fi
