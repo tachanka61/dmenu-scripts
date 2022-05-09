@@ -20,18 +20,19 @@ else
   DMENU() {
     input=$(echo -e "$1" | dmenu -i -l 18)
   }
+  DMENU_EDITOR="xterm -e vim"
 fi
 
 # Define array of configuration files
-declare -A config_array=(
-  [bspwm]="$HOME/.config/bspwm/README.org"
-  [doom]="$HOME/.config/doom/config.org"
-  [fish]="$HOME/.config/fish/config.fish"
-  [kitty]="$HOME/.config/kitty/README.org"
-  [polybar]="$HOME/.config/polybar/config.ini"
-  [starship]="$HOME/.config/starship.toml"
-  [sxhkd]="$HOME/.config/sxhkd/sxhkdrc"
-  [README]="$HOME/.config/README.org"
+declare -a config_array=(
+  "README   - $HOME/.config/README.org"
+  "bspwm    - $HOME/.config/bspwm/README.org"
+  "emacs    - $HOME/.config/doom/config.org"
+  "fish     - $HOME/.config/fish/config.fish"
+  "kitty    - $HOME/.config/kitty/README.org"
+  "polybar  - $HOME/.config/polybar/config.ini"
+  "starship - $HOME/.config/starship.toml"
+  "sxhkd    - $HOME/.config/sxhkd/sxhkdrc"
 )
 
 # Add \n to every entry to display correctly in dmenu
@@ -42,7 +43,8 @@ DMENU "$configs" "Select configuration: "
 
 # If something was selected, open selected option in editor
 if [[ $input ]]; then
-  $DMENU_EDITOR "$input"
+  path_to_config=$(echo "$input" | awk -F ' - ' '{print $2}')
+  $DMENU_EDITOR "$path_to_config"
 fi
 
 exit 0
