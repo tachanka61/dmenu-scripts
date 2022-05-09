@@ -31,15 +31,22 @@ git clone https://github.com/tachanka61/dmenu-scripts.git
 cd dmenu-scripts
   #+end_src
 
-+ *[Optional]* Add folder to your shell's path.
+
++ If you have =make= installed on your system you can do:
+  #+begin_src shell
+make install
+  #+end_src
+
+  or manually:
+
+  #+begin_src shell
+ln -T .dmenurc ~/.dmenurc
+cp ./scripts/* ~/.local/bin/
+  #+end_src
 
 * Files
 ** .dmenurc file
-There is a [[https://github.com/tachanka61/dmenu-scripts/blob/main/.dmenurc][.dmenurc]] in this repository, you should move/copy it to your =$HOME= folder. If you want to customize dmenu, edit it:
-
-#+begin_src shell
-ln -T .dmenurc ~/.dmenurc
-#+end_src
+There is a [[https://github.com/tachanka61/dmenu-scripts/blob/main/.dmenurc][.dmenurc]] in this repository, after installation via ~make install~ it will appear in your =$HOME= directory.
 
 ** Scripts
 *** dmenu-power
