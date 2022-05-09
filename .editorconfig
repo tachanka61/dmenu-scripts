@@ -14,3 +14,7 @@ max_line_length = 80
 
 [*.{org,md,rst,txt}]
 indent_size = 4
+
+[Makefile]
+indent_style = tab
+indent_size = 8
