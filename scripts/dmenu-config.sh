@@ -26,6 +26,7 @@ fi
 # Define array of configuration files
 declare -a config_array=(
   "README   - $HOME/.config/README.org"
+  "awesome  - $HOME/.config/awesome/README.org"
   "bspwm    - $HOME/.config/bspwm/README.org"
   "emacs    - $HOME/.config/doom/config.org"
   "fish     - $HOME/.config/fish/config.fish"
