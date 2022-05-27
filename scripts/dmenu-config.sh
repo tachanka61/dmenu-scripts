@@ -14,7 +14,7 @@ set -euo pipefail
 # shellcheck disable=SC1091,SC2090
 
 # Load config
-if [ -f "$HOME"/.dmenurc ]; then
+if [[ -f "$HOME"/.dmenurc ]]; then
   source "$HOME/.dmenurc"
 else
   DMENU() {

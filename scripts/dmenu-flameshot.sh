@@ -20,7 +20,7 @@ else
   DMENU() {
     input=$(echo -e "$1" | dmenu -i -l 18)
   }
-  DMENU_SCREENSHOT_FOLDER="$HOME/Pictures/screenshots/"
+  DMENU_SCREENSHOT_DIR="$HOME/Pictures/screenshots/"
 fi
 
 # Give options
@@ -29,7 +29,7 @@ GUI Mode (copy)\nMonitor 1 (copy)\nMonitor 2 (copy)\nMonitor 3 (copy)\nAll monit
       "Flameshot: "
 
 flameshot_save() {
-  flameshot "$1" -p "$DMENU_SCREENSHOT_FOLDER$(date +"%m-%d_%T").png"
+  flameshot "$1" -p "$DMENU_SCREENSHOT_DIR$(date +"%m-%d_%T").png"
 }
 
 flameshot_copy() {

@@ -8,20 +8,20 @@
 #    ╚═╝    | notify-send (libnotify)
 # Based on https://github.com/uriel1998/multiple_scripts/blob/master/kpf.sh
 
-# shellcheck disable=SC2086,SC1091
-
 # This makes program more secure
 # Also you can enable 'x' flag to enable debug
 set -euo pipefail
 
 # Load config
-if [ -f "$HOME"/.dmenurc ]; then
+if [[ -f "$HOME"/.dmenurc ]]; then
   source "$HOME/.dmenurc"
 else
   DMENU() {
     input=$(echo -e "$1" | dmenu -i -l 18)
   }
 fi
+
+# shellcheck disable=SC2086,SC1091
 
 # Get database location (should be given as argument)
 database="$1"
