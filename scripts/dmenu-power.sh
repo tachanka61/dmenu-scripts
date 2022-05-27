@@ -14,7 +14,7 @@
 set -euo pipefail
 
 # Load config
-if [ -f "$HOME"/.dmenurc ]; then
+if [[ -f "$HOME"/.dmenurc ]]; then
   source "$HOME/.dmenurc"
 else
   DMENU() {
@@ -34,9 +34,7 @@ DMENU "Quit\nLock screen\nPower off\nReboot" "Choose an option: "
 case $input in
   "Quit")
     confirm "Do you really want to reboot your machine?"
-    bspc quit # bspwm
-    # i3-msg exit # i3
-    # Add your own if you want it
+    pkill "$XDG_SESSION_DESKTOP"
   ;;
   "Lock screen")
     confirm "Do you really want to lock your screen?"
