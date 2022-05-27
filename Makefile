@@ -1,6 +1,6 @@
 
 install:
-	ln -T .dmenurc ~/.dmenurc
+	cp .dmenurc ~/.dmenurc
 	cp ./scripts/* ~/.local/bin/
 
 clean:
