@@ -74,3 +74,8 @@ There is a [[https://github.com/tachanka61/dmenu-scripts/blob/main/.dmenurc][.dm
 + Copy colors of Nord palette to your buffer
 + Dependencies: [[https://github.com/kfish/xsel][xsel]], [[https://www.gnu.org/software/gawk/][awk]]
 + Usage: =./dmenu-nord-color.sh=
+
+*** dmenu-projects
++ Open your projects and switch between them
++ Dependencies: [[https://www.gnu.org/software/emacs/][Emacs]] (default editor, can be changed in =.dmenurc= )
++ Usage: =./dmenu-projects.sh=
