@@ -11,7 +11,7 @@
 
 # This makes program more secure
 # Also you can enable 'x' flag to enable debug
-set -euo pipefail
+set -euox pipefail
 
 # Load config
 if [[ -f "$HOME"/.dmenurc ]]; then
@@ -30,5 +30,5 @@ content=$(ls --sort=time "$DMENU_PROJECT_DIR")
 DMENU "$content" "Select your project: "
 
 if [[ $input ]]; then
-  $DMENU_EDITOR "$input"
+  $DMENU_EDITOR "$DMENU_PROJECT_DIR$input"
 fi
