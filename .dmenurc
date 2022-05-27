@@ -31,7 +31,10 @@ DMENU_EDITOR="emacsclient -c -a 'emacs'"
 # DMENU_EDITOR="$DMENU_TERM -e vim" # Default CLI in terminal
 
 # Use this path to save screenshots (dmenu-flameshot)
-DMENU_SCREENSHOT_FOLDER="$HOME/Pictures/screenshots/"
+DMENU_SCREENSHOT_DIR="$HOME/Pictures/screenshots/"
+
+# Projects folder (dmenu-projects)
+DMENU_PROJECT_DIR="$HOME/projects/"
 
 # Launch dmenu with all flags
 DMENU() {
@@ -55,7 +58,7 @@ DMENU_PASS() {
                        -fn "$DMENU_FONT":pixelsize="$DMENU_FONTSIZE" \
                        -nb $DMENU_BG -nf $DMENU_BG \
                        -sb $DMENU_FG -sf $DMENU_BG
-         )
+            )
 }
 
 # Some actions require confirmation (dmenu-power)
