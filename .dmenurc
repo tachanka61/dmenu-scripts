@@ -38,33 +38,33 @@ DMENU_PROJECT_DIR="$HOME/dev/"
 
 # Launch dmenu with all flags
 DMENU() {
-  input=$( echo -e "$1" \
-            | dmenu -i \
-                    -p "$2" \
-                    -l "$DMENU_LINES" \
-                    -h "$DMENU_HEIGHT" \
-                    -fn "$DMENU_FONT":pixelsize="$DMENU_FONTSIZE" \
-                    -nb $DMENU_BG -nf $DMENU_FG \
-                    -sb $DMENU_FG -sf $DMENU_BG
-         )
+    input=$( echo -e "$1" \
+                | dmenu -i \
+                        -p "$2" \
+                        -l "$DMENU_LINES" \
+                        -h "$DMENU_HEIGHT" \
+                        -fn "$DMENU_FONT":pixelsize="$DMENU_FONTSIZE" \
+                        -nb $DMENU_BG -nf $DMENU_FG \
+                        -sb $DMENU_FG -sf $DMENU_BG
+           )
 }
 
 # Launch dmenu with invisible user input (dmenu-keepass)
 DMENU_PASS() {
-  password=$( echo -e "" \
-               | dmenu -i \
-                       -p "$1" \
-                       -h "$DMENU_HEIGHT" \
-                       -fn "$DMENU_FONT":pixelsize="$DMENU_FONTSIZE" \
-                       -nb $DMENU_BG -nf $DMENU_BG \
-                       -sb $DMENU_FG -sf $DMENU_BG
-            )
+    password=$( echo -e "" \
+                    | dmenu -i \
+                            -p "$1" \
+                            -h "$DMENU_HEIGHT" \
+                            -fn "$DMENU_FONT":pixelsize="$DMENU_FONTSIZE" \
+                            -nb $DMENU_BG -nf $DMENU_BG \
+                            -sb $DMENU_FG -sf $DMENU_BG
+              )
 }
 
 # Some actions require confirmation (dmenu-power)
 confirm() {
-  DMENU "Yes\nNo" "$1"
-  if [[ $input != "Yes" ]] ; then
-    echo "Interrupted by user"
-  fi
+    DMENU "Yes\nNo" "$1"
+    if [[ $input != "Yes" ]] ; then
+        echo "Interrupted by user"
+    fi
 }
