@@ -15,13 +15,13 @@ set -euox pipefail
 
 # Load config
 if [[ -f "$HOME"/.dmenurc ]]; then
-  source "$HOME/.dmenurc"
+    source "$HOME/.dmenurc"
 else
-  DMENU() {
-    input=$(echo -e "$1" | dmenu -i -l 18)
-  }
-  DMENU_EDITOR="xterm -e vim"
-  DMENU_PROJECT_DIR="$HOME/projects/"
+    DMENU() {
+        input=$(echo -e "$1" | dmenu -i -l 18)
+    }
+    DMENU_EDITOR="xterm -e vim"
+    DMENU_PROJECT_DIR="$HOME/projects/"
 fi
 
 # Get project list
@@ -30,5 +30,5 @@ content=$(ls --sort=time "$DMENU_PROJECT_DIR")
 DMENU "$content" "Select your project: "
 
 if [[ $input ]]; then
-  $DMENU_EDITOR "$DMENU_PROJECT_DIR$input"
+    $DMENU_EDITOR "$DMENU_PROJECT_DIR$input"
 fi
