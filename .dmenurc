@@ -12,8 +12,10 @@
 # Options of dmenu
 DMENU_LINES=20
 
+DMENU_HEIGHT=18
+
 DMENU_FONT="Iosevka"
-DMENU_FONTSIZE=9
+DMENU_FONTSIZE=12
 
 DMENU_BG="#3B4252"
 DMENU_FG="#88C0D0"
@@ -40,6 +42,7 @@ DMENU() {
             | dmenu -i \
                     -p "$2" \
                     -l "$DMENU_LINES" \
+                    -h "$DMENU_HEIGHT" \
                     -fn "$DMENU_FONT":pixelsize="$DMENU_FONTSIZE" \
                     -nb $DMENU_BG -nf $DMENU_FG \
                     -sb $DMENU_FG -sf $DMENU_BG
