@@ -34,7 +34,7 @@ DMENU_EDITOR="emacsclient -c -a 'emacs'"
 DMENU_SCREENSHOT_DIR="$HOME/Pictures/screenshots/"
 
 # Projects folder (dmenu-projects)
-DMENU_PROJECT_DIR="$HOME/projects/"
+DMENU_PROJECT_DIR="$HOME/dev/"
 
 # Launch dmenu with all flags
 DMENU() {
