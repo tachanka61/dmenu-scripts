@@ -1,11 +1,11 @@
 
 install:
 	cp .dmenurc ~/.dmenurc
-	cp ./scripts/* ~/.local/bin/
+	cp ./scripts/* /usr/bin/
 
 clean:
 	rm ~/.dmenurc
-	rm ~/.local/bin/dmenu-*.sh
+	rm /usr/bin/dmenu-*.sh
 
 check-scripts:
 	shellcheck -x ./scripts/*.sh
