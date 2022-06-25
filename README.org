@@ -79,3 +79,8 @@ There is a [[https://github.com/tachanka61/dmenu-scripts/blob/main/.dmenurc][.dm
 + Open your projects and switch between them
 + Dependencies: [[https://www.gnu.org/software/emacs/][Emacs]] (default editor, can be changed in =.dmenurc= )
 + Usage: =./dmenu-projects.sh=
+
+*** dmenu-flatpak-run
++ Run flatpak via dmenu
++ Dependencies: [[https://www.flatpak.org/][flatpak]]
+- Usage: =./dmenu-flatpak-run.sh=
