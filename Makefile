@@ -1,7 +1,7 @@
 
 install:
-	cp .dmenurc ~/.dmenurc
-	cp ./scripts/* /usr/bin/
+	sudo cp .dmenurc ~/.dmenurc
+	sudo cp ./scripts/* /usr/bin/
 
 clean:
 	rm ~/.dmenurc
