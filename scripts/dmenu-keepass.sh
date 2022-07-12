@@ -4,15 +4,15 @@
 # ╚══██╔══╝ |               tachanka61
 #    ██║    |
 #    ██║    | https://github.com/tachanka61/dmenu-scripts
-#    ██║    | Dependencies: dmenu, keepassxc-cli, xsel,
-#    ╚═╝    | notify-send (libnotify)
-# Based on https://github.com/uriel1998/multiple_scripts/blob/master/kpf.sh
+#    ██║    | Dependencies: dmenu, keepassxc-cli, libnotify (notify-send)
+#    ╚═╝    |
+# Inspired by https://github.com/uriel1998/multiple_scripts/blob/master/kpf.sh
 
 # Shellcheck stuff
-# shellcheck disable=SC2086,SC1091
+# shellcheck disable=SC2086,SC1091,SC2154
 
 # This makes program more secure
-# Also you can enable 'x' flag to enable debug
+# Also you can enable 'x' flag to enable debug, BUT YOUR PASSWORD WILL BE VISIBLE
 set -euo pipefail
 
 # Load config
@@ -41,13 +41,10 @@ keepass_list=$(echo "$password" \
               )
 
 # Select an entry
-DMENU "$keepass_list" "Choose an entry: "
+DMENU "$keepass_list" "keepassxc"
 
 # Get password and copy it to buffer
-echo "$password" \
-    | keepassxc-cli show -s "${database}" "$input" \
-                         -a password 2> /dev/null \
-    | xsel -p ; xsel -o | xsel -b
+echo "$password" | keepassxc-cli clip $database $input
 
 # Get username and show it using 'notify-send'
 notify-send "Username: $(echo "$password" \
